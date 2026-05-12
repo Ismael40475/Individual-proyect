@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Forma profesional de enlazar el CSS en el <head> -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/estilo_2_3_4.css') }}">
+   
+
+</head>
+<body>
+    <h1>Prueba de archivos estáticos</h1>
+     <!-- Forma profesional de mostrar una imagen -->
+    <img src="{{ url_for('static', filename='img/hola.png') }}" alt="Mejor", width="400">
+        <ul>
+    {% if logs %}
+        {% for item in logs %}
+            <li>{{ item.id }} - Evento: {{ item.evento }}</li>
+        {% endfor %}
+    {% else %}
+            <li>No hay registros.</li>
+    {% endif %}
+        </ul>
+        <p>Lista generada por Ismael</p>
+</body>
+</html>
